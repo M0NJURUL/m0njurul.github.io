@@ -1,0 +1,18 @@
+.about {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  background-color: transparent; /* inherit card bg from wrapper */
+}
+
+.heading {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+}

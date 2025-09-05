@@ -1,0 +1,65 @@
+.references {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  background: transparent;          /* was #fff: inherit card bg for dark */
+}
+
+.heading {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-strong);        /* from theme */
+  /* no left rule on the section heading */
+}
+
+/* Grid: 2 columns on desktop/print, 1 column on narrow screens */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.25rem;
+}
+
+/* Reference card (timeline blue/gradient rail handled by global/theme) */
+.item {
+  border-left: 4px solid #2196f3;
+  padding-left: 1rem;
+  margin: 0;
+  background: transparent;          /* important for dark */
+}
+
+.name {
+  font-weight: 700;
+  color: var(--text-strong);
+  margin: 0 0 0.15rem 0;
+}
+
+.position {
+  font-weight: 500;
+  color: var(--text);
+  margin: 0 0 0.2rem 0;
+}
+
+.meta {
+  color: var(--text-dim);           /* better contrast control */
+  font-size: 0.95rem;
+  margin: 0.1rem 0;
+}
+
+.link {
+  color: var(--link);
+  text-decoration: none;
+}
+.link:hover { text-decoration: underline; }
+
+/* Small screens */
+@media (max-width: 680px) {
+  .list { grid-template-columns: 1fr; }
+}
+
+/* Print keeps 2 columns (print.css also forces classic light) */
+@media print {
+  .list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem 1rem; }
+}

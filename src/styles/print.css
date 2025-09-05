@@ -1,0 +1,98 @@
+/* ======================================================
+   PRINT-ONLY OVERRIDES
+   Classic LIGHT CV
+   - Rails black
+   - Each item intact
+   - Projects & Certifications: show raw URL instead of label
+   ====================================================== */
+@media print {
+
+  :root,
+  :root[data-theme="dark"] {
+    --bg-grad: none;
+    --card-bg: #fff;
+    --card-border: #ddd;
+    --card-shadow: none;
+
+    --text-strong: #111827;
+    --text: #1f2937;
+    --text-dim: #4b5563;
+  }
+
+  html, body {
+    background: #fff !important;
+    color: #000 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Hide anything excluded by toggle */
+  [data-print="off"] { display: none !important; }
+
+  /* Section wrappers: strip cards & allow break */
+  .page > [data-print] {
+    background: #fff !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 0 10px 0 !important;
+  }
+
+  .page h1, .page h2, .page h3 {
+    background: none !important;
+    color: #000 !important;
+    break-after: avoid-page !important;
+    page-break-after: avoid !important;
+  }
+
+  /* Rails: force solid black */
+  .page :where(li[class*="item"], div[class*="item"])::before { display: none !important; }
+  .page :where(li[class*="item"], div[class*="item"]) {
+    border-left: 4px solid #000 !important;
+    padding-left: 1rem !important;
+    background: transparent !important;
+
+    /* keep each item intact */
+    break-inside: avoid-page !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* General link style for print */
+  .page a {
+    color: #000 !important;
+    text-decoration: none !important;
+    position: static !important;
+  }
+  .page a::before, .page a::after { display: none !important; }
+
+  /* ---- Projects & Certifications: swap label for URL ---- */
+  .projects .linkLabel,
+  .certifications .linkLabel {
+    display: none !important;       /* hide "View project"/"View certificate" */
+  }
+
+  .projects .printUrl,
+  .certifications .printUrl {
+    display: inline !important;     /* show the raw URL */
+    font: 0.9em ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    color: #000 !important;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  /* Force black for body text */
+  .page .meta, .page .details, .page .description, .page .tech,
+  .page time, .page .date, .page .period, .page p, .page li {
+    color: #000 !important;
+  }
+
+  /* Hide UI elements in print */
+  [class*="toggleBtn"], .printBtn,
+  [aria-label*="Switch to dark mode"], [aria-label*="Switch to light mode"], .themeToggle {
+    display: none !important;
+  }
+
+  @page { margin: 12mm; }
+}

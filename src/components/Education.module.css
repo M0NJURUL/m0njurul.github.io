@@ -1,0 +1,48 @@
+.education {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  background: transparent; /* inherit card bg in dark */
+}
+
+.heading {
+  font-size: 1.5rem;
+  margin: 0 0 0.6rem 0;
+  color: var(--text-strong);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  border-left: 4px solid #2196f3; /* screen gets gradient via theme.css */
+  padding-left: 1rem;
+  margin: 0 0 1rem 0;
+  background: transparent;
+}
+
+.degree {
+  font-weight: 700;
+  color: var(--text-strong);
+  margin: 0 0 0.15rem 0;
+}
+
+.institute {
+  font-weight: 500;
+  color: var(--text);
+  margin: 0 0 0.25rem 0;
+}
+
+/* Meta line e.g. “Computer Science and Engineering | CGPA: 3.84 / 4.00 | 2022” */
+.meta,
+.date,
+time,
+.item :where(.meta, .date, time) {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.35;
+  word-break: break-word;
+}

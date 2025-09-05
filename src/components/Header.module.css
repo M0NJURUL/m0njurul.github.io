@@ -1,0 +1,47 @@
+.header {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.info {
+  flex: 1;
+}
+
+.name {
+  font-size: 2rem;
+  margin: 0 0 0.25rem 0;
+}
+
+.title {
+  font-size: 1.1rem;
+  color: var(--text);      /* use theme token for good contrast in light/dark */
+  font-weight: 500;        /* small boost for readability */
+  margin: 0;
+}
+
+.photoWrapper {
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  object-position: center 15%;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+}

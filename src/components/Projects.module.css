@@ -1,0 +1,68 @@
+.projects {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  background: transparent; /* inherit card bg */
+}
+
+.heading {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  /* no left rule on section heading */
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  border-left: 4px solid #2196f3;   /* ✅ blue rule like Education/Experience */
+  padding-left: 1rem;
+  margin: 0 0 1.2rem 0;
+}
+
+.top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.title {
+  font-weight: 700;
+  color: #222;
+}
+
+.description {
+  margin: 0.25rem 0 0.5rem 0;
+  color: var(--text);
+}
+
+.meta {
+  margin-top: 0.25rem;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tech {
+  font-style: italic;
+}
+
+.dot {
+  opacity: 0.6;
+}
+
+.link {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

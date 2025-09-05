@@ -1,0 +1,69 @@
+.certifications {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  background: transparent; /* inherit card bg */
+}
+
+.heading {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  /* ❌ remove border-left so section title has no blue line */
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  border-left: 4px solid #2196f3;   /* ✅ only items get the blue line */
+  padding-left: 1rem;
+  margin: 0 0 1.2rem 0;
+}
+
+.top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.title {
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.date {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.meta {
+  margin-top: 0.25rem;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.issuer {
+  font-weight: 500;
+}
+
+.dot {
+  opacity: 0.6;
+}
+
+.link {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,78 @@
+/* Any block you can toggle on/off */
+.section,
+.photoWrapper {
+  position: relative;
+  border: 2px solid transparent;   /* keep component borders intact */
+  border-radius: 0;
+  min-height: 32px;
+  padding-right: 36px;              /* space for the eye button */
+}
+
+/* Show dotted outline when hovering the toggleable area */
+.section:hover,
+.photoWrapper:hover {
+  outline: 2px dashed #9aa0a6;
+  outline-offset: 0;
+}
+
+/* The eye button (only shows on hover) */
+.toggleBtn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  border: 1px solid #cfcfcf;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(15,23,42,.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .9rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .2s, transform .15s;
+  z-index: 3;                       /* above overlay & content */
+}
+.section:hover > .toggleBtn,
+.photoWrapper:hover > .toggleBtn { opacity: 1; }
+.toggleBtn:hover { transform: scale(1.08); }
+[data-print="on"]  > .toggleBtn { color: #0f9d58; } /* 👁 */
+[data-print="off"] > .toggleBtn { color: #e02424; } /* 🙈 */
+
+/* ===== EXCLUDED STATE — big red hatch that covers the ENTIRE host ===== */
+.excluded,
+[data-print="off"] { border-color: transparent !important; }
+
+.excluded::after,
+[data-print="off"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;                         /* cover the whole block, rail included */
+  border-radius: inherit;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(224,36,36,.34) 0,
+      rgba(224,36,36,.34) 10px,
+      rgba(224,36,36,.48) 10px,
+      rgba(224,36,36,.48) 20px
+    );
+  background-color: rgba(224,36,36,.16);
+  pointer-events: none;
+  z-index: 2;                       /* sits under the eye button */
+}
+
+/* ===== PHOTO: hatch clipped to image; eye sits exactly on the corner ===== */
+.photoWrapper {
+  display: inline-block;            /* shrink-wrap to the image box */
+  border-radius: 12px;              /* match your avatar rounding */
+  overflow: hidden;                 /* clip the hatch to the photo */
+  padding-right: 0;                 /* no gutter on the right */
+}
+.photoWrapper > .toggleBtn {
+  top: 8px;
+  right: 8px;                       /* place directly on the photo corner */
+}
